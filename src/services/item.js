@@ -7,8 +7,4 @@ async function createItem(name, price, quantity) {
         subtotal: calcularSubtotal(price, quantity)
     }
 }
-function calcularSubtotal(price, quantity) {
-    return price * quantity;
-}
-
 export default createItem;
