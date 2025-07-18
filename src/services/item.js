@@ -1,10 +1,16 @@
-//criar item com subtotal certo
-async function createItem(name, price, quantity) {
-    return {
-        name,
-        price,
-        quantity,
-        subtotal: calcularSubtotal(price, quantity)
-    }
+// Função utilitária para calcular subtotal de um item
+function calcularSubtotal(price, quantity) {
+  return price * quantity;
 }
-export default createItem;
+
+// Criar item garantindo o campo subtotal
+async function createItem(name, price, quantity = 1) {
+  return {
+    name,
+    price,
+    quantity,
+    subtotal: calcularSubtotal(price, quantity)
+  };
+}
+
+export { createItem, calcularSubtotal };
